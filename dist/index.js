@@ -42,9 +42,15 @@ const options = {
 app.use((0, cors_1.default)(options));
 app.use(express_1.default.json());
 app.get("/", (req, res, next) => {
-    res.send("Hello World");
+    res.send(`<h1>Hello! Please find more details about the API 
+      <a 
+      href="https://chiranjivi-backend-api.postman.co/workspace/
+      EcoCart~499186ee-f3ad-49f1-b53c-f8be56b598c2/collection/
+      5095269-f3363f14-f3df-4120-8213-7644dc8cd26e?action=share&creator=5095269">
+        here.
+      </a><h1>`);
 });
-app.post("/meals/ingredients", jsonParser, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+app.post("/api/meals/ingredient", jsonParser, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     // api key validation
     const apiKey = req.get("API-Key");
     if (!apiKey) {
