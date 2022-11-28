@@ -1,5 +1,6 @@
 # dist/
 .env
+/coverage/
 
 node_modules/
 .vercel

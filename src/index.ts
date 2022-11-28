@@ -149,3 +149,5 @@ app.use(errorHandler);
 const server: Server = app.listen(PORT, () =>
   console.log(`Now listening on port ${PORT}`)
 );
+
+export default app;
