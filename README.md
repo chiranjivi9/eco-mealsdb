@@ -6,7 +6,7 @@
 
 - Deployed URL: https://eco-mealsdb.vercel.app/
 
-## Development
+## 🛠️ Development
 
 Clone
 
@@ -30,13 +30,13 @@ Start production server
     $ npm run build
     $ npm run start
 
-## API Documentation:
+## 📄 API Documentation:
 
-1. Filter by ingredient [POST]
-   - /api/meals/ingredient
+1. Filter by ingredient [GET]
+   - /api/meals
      - Authorization type - API Key
 
-- The filter by ingredient api on success returns a status code of `200` along with the `isSuccess: true` flag
+- The filter by ingredient api on success returns a status code of `200` along with the `isSuccess:true` flag.
 
 <br>
 
@@ -48,7 +48,7 @@ Start production server
 
 - ## How to test API endpoints?
 
-  - Once we have the dev server running locally, inside postman use the `/api/meals/ingredient` endpoint and use the `API Key` as Authorization method. (The key is mentioned in the [Developement](#development) section).
+  - Once we have the dev server running locally, inside postman use the `/api/meals?ingredient=<ingredient_name>` endpoint and use the `API Key` as Authorization method. (The key is mentioned in the [Developement](#development) section).
 
   - There are examples of various scenarios for reference.
 

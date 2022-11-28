@@ -18,12 +18,12 @@ describe("Test index.ts", () => {
     });
   });
 
-  test("POST /api/meals/ingredient", async () => {
-    const res = await request(app).post("/api/meals/ingredient");
-    expect(res.status).toEqual(400);
+  test("GET /api/meals", async () => {
+    const res = await request(app).get("/api/meals");
+    expect(res.status).toEqual(401);
     expect(res.body).toEqual({
       isSuccess: false,
-      status: 400,
+      status: 401,
       message: "API key is missing",
     });
   });

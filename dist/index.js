@@ -42,32 +42,32 @@ const options = {
 app.use((0, cors_1.default)(options));
 app.use(express_1.default.json());
 app.get("/", (req, res, next) => {
-    res.send(`<h1>Hello! Please find more details about the API 
+    res.send(`<h1>Hello! Please find more details about the API in the Postman collection 
       <a 
       href="https://chiranjivi-backend-api.postman.co/workspace/
       EcoCart~499186ee-f3ad-49f1-b53c-f8be56b598c2/collection/
       5095269-f3363f14-f3df-4120-8213-7644dc8cd26e?action=share&creator=5095269">
-        here.
+      here.
       </a><h1>`);
 });
-app.post("/api/meals/ingredient", jsonParser, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/api/meals", jsonParser, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     // api key validation
     const apiKey = req.get("API-Key");
     if (!apiKey) {
-        return res.status(400).send({
+        return res.status(401).send({
             isSuccess: false,
-            status: 400,
+            status: 401,
             message: "API key is missing",
         });
     }
     if (apiKey !== process.env.API_KEY) {
-        return res.status(400).send({
+        return res.status(401).send({
             isSuccess: false,
-            status: 400,
+            status: 401,
             message: "Incorrect API Key",
         });
     }
-    let { ingredient } = req.body;
+    let { ingredient } = req.query;
     // basic validation
     if (!ingredient) {
         return res.status(400).send({
@@ -127,3 +127,4 @@ const errorHandler = (err, req, res, next) => {
 };
 app.use(errorHandler);
 const server = app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
+exports.default = app;
