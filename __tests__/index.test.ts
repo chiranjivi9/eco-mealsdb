@@ -10,7 +10,6 @@ describe("Test index.ts", () => {
 
   test("invalid route", async () => {
     const res = await request(app).get("/invalid-route");
-    console.log("Res ,", res);
     expect(res.status).toEqual(404);
     expect(res.body).toEqual({
       isSuccess: false,
@@ -21,7 +20,6 @@ describe("Test index.ts", () => {
 
   test("POST /api/meals/ingredient", async () => {
     const res = await request(app).post("/api/meals/ingredient");
-    console.log("Res ,", res);
     expect(res.status).toEqual(400);
     expect(res.body).toEqual({
       isSuccess: false,
