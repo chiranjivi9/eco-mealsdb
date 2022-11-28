@@ -6,7 +6,7 @@
 
 - Deployed URL: https://eco-mealsdb.vercel.app/
 
-# Development
+## Development
 
 Clone
 
@@ -30,7 +30,7 @@ Start production server
     $ npm run build
     $ npm run start
 
-# API Documentation:
+## API Documentation:
 
 1. Filter by ingredient [POST]
    - /api/meals/ingredient
