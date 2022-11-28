@@ -41,6 +41,7 @@ const options = {
 // use cors middleware
 app.use((0, cors_1.default)(options));
 app.use(express_1.default.json());
+/* Base api */
 app.get("/", (req, res, next) => {
     res.send(`<h1>Hello! Please find more details about the API in the Postman collection 
       <a 
@@ -50,6 +51,7 @@ app.get("/", (req, res, next) => {
       here.
       </a><h1>`);
 });
+/* This api returns the meals filtered by ingredient */
 app.get("/api/meals", jsonParser, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     // api key validation
     const apiKey = req.get("API-Key");
@@ -98,6 +100,7 @@ app.get("/api/meals", jsonParser, (req, res, next) => __awaiter(void 0, void 0, 
                 message: `No meals found ingredient ${ingredient}`,
             });
         }
+        // Process the filtered meals returned from the above fetch call.
         (0, utils_1.processFetchById)(filterByIngredient.data.meals).then((response) => {
             if (!response.isSuccess) {
                 return res.status(500).send(response);

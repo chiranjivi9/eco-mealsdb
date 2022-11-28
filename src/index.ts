@@ -39,6 +39,7 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use(express.json());
 
+/* Base api */
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   res.send(
     `<h1>Hello! Please find more details about the API in the Postman collection 
@@ -51,6 +52,7 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
   );
 });
 
+/* This api returns the meals filtered by ingredient */
 app.get(
   "/api/meals",
   jsonParser,
@@ -112,6 +114,7 @@ app.get(
         });
       }
 
+      // Process the filtered meals returned from the above fetch call.
       processFetchById(filterByIngredient.data.meals).then((response) => {
         if (!response.isSuccess) {
           return res.status(500).send(response);

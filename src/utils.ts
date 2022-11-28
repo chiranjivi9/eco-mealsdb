@@ -60,6 +60,7 @@ export const parseResponse = (response: any) => {
   return structureObject;
 };
 
+/* 👉️ This method returns an array of meals per the required structure. */
 export const processFetchById = async (
   filteredMeals: [{ strMeal: string; strMealThumb: string; idMeal: string }]
 ) => {

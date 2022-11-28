@@ -62,6 +62,7 @@ const parseResponse = (response) => {
     return structureObject;
 };
 exports.parseResponse = parseResponse;
+/* 👉️ This method returns an array of meals per the required structure. */
 const processFetchById = (filteredMeals) => __awaiter(void 0, void 0, void 0, function* () {
     // Awaiting multiple all API
     let promises = [];
