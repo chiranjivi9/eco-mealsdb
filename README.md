@@ -42,7 +42,7 @@ Start production server
 
 - ## Postman
 
-  - Please find the API with examples in the collection [here](https://chiranjivi-backend-api.postman.co/workspace/EcoCart~499186ee-f3ad-49f1-b53c-f8be56b598c2/collection/5095269-f3363f14-f3df-4120-8213-7644dc8cd26e?action=share&creator=5095269).
+  - Please find the API with examples in the collection [here](https://www.postman.com/chiranjivi-backend-api/workspace/ecocart-public/collection/5095269-f3363f14-f3df-4120-8213-7644dc8cd26e).
 
 <br>
 
